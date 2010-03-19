@@ -1,0 +1,119 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="crowdcheer_data" version="1.3.0" audacityversion="1.3.11-beta" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="148.0736336238" rate="44100">
+	<tags>
+		<tag name="id3v2" value="1"/>
+		<tag name="Software" value="Audacity"/>
+		<tag name="ARTIST" value="Sven-Hendrik Haase"/>
+		<tag name="YEAR" value="2010"/>
+		<tag name="GENRE" value="Sound"/>
+		<tag name="TITLE" value="Crowd Cheer"/>
+		<tag name="COMMENTS" value="For instacheer"/>
+	</tags>
+	<wavetrack name="821__Koen__Gd_dch0" channel="2" linked="0" mute="0" solo="0" height="149" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.53743764">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="126379">
+				<waveblock start="0">
+					<simpleblockfile filename="e00008b8.au" len="126379" min="-1.000959" max="0.990263" rms="0.299449"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="3">
+				<controlpoint t="0.171736863658" val="0.505420804024"/>
+				<controlpoint t="0.698501812225" val="0.477542638779"/>
+				<controlpoint t="1.927620025548" val="0.087248325348"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="31169__lonemonk__Approx_850_Enthusiast_Audience 1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.60780045">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="197484">
+				<waveblock start="0">
+					<simpleblockfile filename="e000033d.au" len="197484" min="-0.661046" max="0.755737" rms="0.106618"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="3">
+				<controlpoint t="1.911211287750" val="0.986111104488"/>
+				<controlpoint t="3.802162385170" val="0.944444417953"/>
+				<controlpoint t="4.470748666043" val="0.986111104488"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="31169__lonemonk__Approx_850_Enthusiast_Audience" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.60780045">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="197484">
+				<waveblock start="0">
+					<simpleblockfile filename="e00007ce.au" len="197484" min="-0.880926" max="0.868693" rms="0.124955"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="3">
+				<controlpoint t="1.911211287750" val="0.986111104488"/>
+				<controlpoint t="3.802162385170" val="0.944444417953"/>
+				<controlpoint t="4.470748666043" val="0.986111104488"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="1408__sleep__string_whip 1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="43423">
+				<waveblock start="0">
+					<simpleblockfile filename="e000099e.au" len="43423" min="-0.774729" max="0.68183" rms="0.207783"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="1408__sleep__string_whip" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="43423">
+				<waveblock start="0">
+					<simpleblockfile filename="e000009b.au" len="43423" min="-0.753963" max="0.664532" rms="0.199991"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="11812__SpeedY__Dist_Pickslide1" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="150080">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000f37.au" len="150080" min="-0.892918" max="0.87647" rms="0.177198"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="3">
+				<controlpoint t="0.143011567222" val="1.013888835907"/>
+				<controlpoint t="0.355362076128" val="0.430555582047"/>
+				<controlpoint t="1.997828257257" val="0.097222208977"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="20784__wanna73__Crowd_cheering_football_01 1" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="215625">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000017.au" len="215625" min="-0.853399" max="0.809205" rms="0.164408"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.000005000000" val="0.097222208977"/>
+				<controlpoint t="1.156389191809" val="1.027777791023"/>
+				<controlpoint t="3.261890643050" val="1.000000000000"/>
+				<controlpoint t="4.004764288465" val="0.305555582047"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="20784__wanna73__Crowd_cheering_football_01" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1" pan="0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="215625">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000558.au" len="215625" min="-0.851814" max="0.976426" rms="0.170763"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.000005000000" val="0.097222208977"/>
+				<controlpoint t="1.156389191809" val="1.027777791023"/>
+				<controlpoint t="3.261890643050" val="1.000000000000"/>
+				<controlpoint t="4.004764288465" val="0.305555582047"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>
