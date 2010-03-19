@@ -1,0 +1,29 @@
+==================
+    instacheer    
+==================
+Instant cheering for your desktop!
+
+==== What? ====
+This is a small, rather useless application that will spawn a small animated
+cheering application on your desktop. Use it for simulating achievements or
+general silliness. 
+
+==== How? ====
+Make it and call it using 
+./instacheer.bin [-p pos] [-a anim] [-i icon] [-s sound] <text>
+
+==== Options ====
+-p pos is the screen position and one of: topleft, topcenter, topright,
+centerright, bottomright, bottomcenter, bottomleft, centerleft. 
+Default is bottomcenter.
+
+-a anim is one of the predefined animations.
+Default is 1.
+
+-i icon is the path to an icon image.
+Default is the internal image.
+
+-s sound is the path to a sound file played with the cheer.
+Default is the internal cheer.
+
+<text> is a necessary next shown with the cheer notification.
