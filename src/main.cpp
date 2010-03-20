@@ -5,6 +5,8 @@
 
 #include <boost/cstdint.hpp>
 
+#include <QtGui>
+
 #include <string>
 #include <iostream>
 
@@ -19,16 +21,48 @@
 #define TEXT "LOLOMFG"
 
 int main(int argc, char *argv[]) {
+	// TODO: add program options for this crap
 	std::string achievement = TEXT;
 
+	// initialize Qt application context
+	QApplication qapp(argc, argv);
+
+	// obtain usable space (minus docks and task bars)
+	QDesktopWidget desktop;
+	uint16_t availx = desktop.availableGeometry().width();
+	uint16_t availy = desktop.availableGeometry().height();
+
+	// figure out positioning
 	sf::VideoMode VideoMode;
 	VideoMode.GetDesktopMode();
-	uint16_t posx = sf::VideoMode::GetDesktopMode().Width - WIDTH;
-	uint16_t posy = sf::VideoMode::GetDesktopMode().Height - HEIGHT;
+	uint16_t posx = availx - WIDTH;
+	uint16_t posy = availy - HEIGHT;
 	
+	// get screen shot for fake transparency
+	QPixmap QScreenshot;
+	QScreenshot = QPixmap::grabWindow(QApplication::desktop()->winId());
+
+	// convert QtPixmap to sf::Image
+	QByteArray Bytes;
+	QBuffer Buffer(&Bytes);
+	Buffer.open(QIODevice::WriteOnly);
+	QScreenshot.save(&Buffer, "PNG");
+
+	// initialize SFML application context
 	sf::RenderWindow App(sf::VideoMode(WIDTH, HEIGHT), "Achievements", sf::Style::None);
+	App.Show(false); // use a little "short cut" in SFML to get back window focus
+	App.Show(true);
 	App.SetFramerateLimit(60);
+	App.UseVerticalSync(true);
 	App.SetPosition(posx, posy);
+
+	// load converted QtPixmap into sf::Image
+	sf::Image Screenshot;
+	Screenshot.SetSmooth(false);
+	Screenshot.LoadFromMemory(Bytes, Bytes.size());
+	sf::Sprite Background(Screenshot);
+	sf::IntRect SubRect(availx - WIDTH, availy - HEIGHT, availx, availy);
+	Background.SetSubRect(SubRect);
 
 	sf::Font Font;
 	if(!Font.LoadFromFile("../font/LiberationSans-Bold.ttf"))
@@ -80,14 +114,14 @@ int main(int argc, char *argv[]) {
 						Text.GetPosition().y + (Text.GetRect().GetHeight() / 2));
 	PartSys.Rotate(180);
 
-	sf::SoundBuffer Buffer;
-	if(!Buffer.LoadFromFile("../snd/crowdcheer.ogg"))
+	sf::SoundBuffer SBuffer;
+	if(!SBuffer.LoadFromFile("../snd/crowdcheer.ogg"))
 		return EXIT_FAILURE;
 
 	sf::Sound Sound;
-	Sound.SetBuffer(Buffer);
-
+	Sound.SetBuffer(SBuffer);
 	Sound.Play();
+
 	while(Clock.GetElapsedTime() < DURATION) {
 		App.Clear();
 
@@ -95,6 +129,7 @@ int main(int argc, char *argv[]) {
 		//PartSys.Rotate(30*dt);
 
 		PartSys.Update(App.GetFrameTime());
+		App.Draw(Background);
 		App.Draw(PartSys);
 		App.Draw(Text);
 		App.Display();
