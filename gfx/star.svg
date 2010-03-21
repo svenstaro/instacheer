@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="star.svg">
+   sodipodi:docname="star.svg"
+   inkscape:export-filename="/home/svenstaro/instacheer/gfx/star.png"
+   inkscape:export-xdpi="22.5"
+   inkscape:export-ydpi="22.5">
   <defs
      id="defs4">
     <linearGradient
@@ -69,6 +72,14 @@
        r="359.77115"
        gradientTransform="matrix(1,0,0,0.95883997,0,21.16863)"
        gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       id="filter4806">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="5.9976366"
+         id="feGaussianBlur4808" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -78,14 +89,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.38583845"
-     inkscape:cx="217.74242"
-     inkscape:cy="520"
+     inkscape:cx="405.6449"
+     inkscape:cy="312.65934"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="744"
-     inkscape:window-x="-2"
+     inkscape:window-x="-3"
      inkscape:window-y="-3"
      inkscape:window-maximized="1" />
   <metadata
@@ -107,7 +118,7 @@
      transform="translate(0,-252.36218)">
     <path
        sodipodi:type="star"
-       style="opacity:0.78280544;fill:url(#radialGradient3616);fill-opacity:1;fill-rule:evenodd;stroke:url(#radialGradient3606);stroke-width:30;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="opacity:0.78280543999999985;fill:url(#radialGradient3616);fill-opacity:1;fill-rule:evenodd;stroke:url(#radialGradient3606);stroke-width:30;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4806)"
        id="path2816"
        sodipodi:sides="5"
        sodipodi:cx="314.28571"
