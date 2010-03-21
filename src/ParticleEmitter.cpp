@@ -11,8 +11,9 @@ void ParticleEmitter::InitParticle(ParticlePtr particle) {
 	sf::Vector2f dir(0.f, 1.f);
 
 	//Get a random angle between the given extremes
-	float angle_variation = PI/5;
-	float angle = sf::Randomizer::Random(-angle_variation, angle_variation);
+	float angle_variation_min = mAngleRangeMin*(PI/180);
+	float angle_variation_max = mAngleRangeMax*(PI/180);
+	float angle = sf::Randomizer::Random(angle_variation_min, angle_variation_max);
 	//Get a direction vector from the angle and initial direction
 	float cos_val = cosf(angle);
 	float sin_val = sinf(angle);

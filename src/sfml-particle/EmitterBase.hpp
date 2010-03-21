@@ -112,6 +112,7 @@ namespace part
 		void SetRotationSpeed(float speed)						{ mRotationSpeed = speed; }
 		void SetBlendMode(sf::Blend::Mode mode)					{ mBlendMode = mode; }
 		void SetOffset(sf::Vector2f offset)						{ mPositionOffset = offset; }
+		void SetAngleRange(sf::Int16 angle_min, sf::Int16 angle_max)	{ mAngleRangeMin = angle_min; mAngleRangeMax = angle_max; }
 
 	protected:
 
@@ -125,6 +126,8 @@ namespace part
 		//Settings
 		sf::Vector2f mPos;
 		sf::Vector2f mPositionOffset;
+		sf::Int16 mAngleRangeMin;
+		sf::Int16 mAngleRangeMax;
 		sf::Color mStartColor, mEndColor;
 		bool mIsGrayScale;
 		bool mIsSingle;
