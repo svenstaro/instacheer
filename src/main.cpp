@@ -17,7 +17,8 @@
 #define PI 3.141592f
 #define WIDTH 500
 #define HEIGHT 300
-#define DURATION 5
+#define DURATION 7
+#define POSITION "bottomright"
 #define TEXT "LOLOMFG"
 
 int main(int argc, char *argv[]) {
@@ -29,14 +30,47 @@ int main(int argc, char *argv[]) {
 
 	// obtain usable space (minus docks and task bars)
 	QDesktopWidget desktop;
-	uint16_t availx = desktop.availableGeometry().width();
-	uint16_t availy = desktop.availableGeometry().height();
+	QRect available(desktop.availableGeometry());
+	uint16_t posx;
+	uint16_t posy;
 
 	// figure out positioning
-	sf::VideoMode VideoMode;
-	VideoMode.GetDesktopMode();
-	uint16_t posx = availx - WIDTH;
-	uint16_t posy = availy - HEIGHT;
+	if(POSITION == "topleft") {
+		posx = available.x();
+		posy = available.y();
+	}
+	else if(POSITION == "topcenter") {
+		posx = (available.width() + available.x()) / 2 - (WIDTH / 2);
+		posy = available.y();
+	}
+	else if(POSITION == "topright") {
+		posx = available.width() + available.x() - WIDTH;
+		posy = available.y();
+	}
+	else if(POSITION == "centerright") {
+		posx = available.width() + available.x() - WIDTH;
+		posy = (available.height() + available.y()) / 2 - (HEIGHT / 2);
+	}
+	else if(POSITION == "bottomright") {
+		posx = available.width() + available.x() - WIDTH;
+		posy = available.height() + available.y() - HEIGHT;
+	}
+	else if(POSITION == "bottomcenter") {
+		posx = (available.width() + available.x()) / 2 - (WIDTH / 2);
+		posy = available.height() + available.y() - HEIGHT;
+	}
+	else if(POSITION == "bottomleft") {
+		posx = available.x();
+		posy = available.height() + available.y() - HEIGHT;
+	}
+	else if(POSITION == "centerleft") {
+		posx = available.x();
+		posy = (available.height() + available.y()) / 2 - (HEIGHT / 2);
+	}
+	else if(POSITION == "center") {
+		posx = (available.width() + available.x()) / 2 - (WIDTH / 2);
+		posy = (available.height() + available.y()) / 2 - (HEIGHT / 2);
+	}
 	
 	// get screen shot for fake transparency
 	QPixmap QScreenshot;
@@ -61,9 +95,10 @@ int main(int argc, char *argv[]) {
 	Screenshot.SetSmooth(false);
 	Screenshot.LoadFromMemory(Bytes, Bytes.size());
 	sf::Sprite Background(Screenshot);
-	sf::IntRect SubRect(availx - WIDTH, availy - HEIGHT, availx, availy);
+	sf::IntRect SubRect(posx, posy, posx + WIDTH, posy + HEIGHT);
 	Background.SetSubRect(SubRect);
 
+	// load and position font
 	sf::Font Font;
 	if(!Font.LoadFromFile("../font/LiberationSans-Bold.ttf"))
 		return EXIT_FAILURE;
@@ -71,8 +106,10 @@ int main(int argc, char *argv[]) {
 	Text.SetPosition((WIDTH - Text.GetRect().GetWidth()) / 2, 
 					(HEIGHT - Text.GetRect().GetHeight()) / 2);
 
+	// clock for keeping the running time
 	sf::Clock Clock;
 
+	// make our particles totally random!
 	sf::Randomizer::SetSeed((unsigned int)time(NULL));
  
 	//Initialize a particle system
@@ -103,6 +140,7 @@ int main(int argc, char *argv[]) {
 
 	ParticleEmitter Emitter3(Emitter1);
 	Emitter3.SetOffset(sf::Vector2f(100.f, 0));
+	//Emitter3.SetAngleRange(90, 90);
 	Emitter3.Init();
  
 	//Finally we create a particle system with our Emitters :)

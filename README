@@ -14,7 +14,7 @@ Make it and call it using
 
 ==== Options ====
 -p pos is the screen position and one of: topleft, topcenter, topright,
-centerright, bottomright, bottomcenter, bottomleft, centerleft. 
+centerright, bottomright, bottomcenter, bottomleft, centerleft, center. 
 Default is bottomcenter.
 
 -a anim is one of the predefined animations.
